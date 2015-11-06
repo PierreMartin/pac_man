@@ -1,24 +1,26 @@
 function Game(container, ms)
 {
-    this.container = $(container).get(0),
-    this.ms = ms,
-    this.width = this.container.width,
-    this.height = this.container.height,
-    this.ctx = this.container.getContext("2d"),
-    this.play = true,
+    this.container  = $(container).get(0),
+    this.ms         = ms,
+    this.width      = this.container.width,
+    this.height     = this.container.height,
+    this.ctx        = this.container.getContext("2d"),
+    this.play       = true,
 
-    this.rightDown = false,
-    this.leftDown = false,
-    this.topDown = false,
+    this.rightDown  = false,
+    this.leftDown   = false,
+    this.topDown    = false,
     this.bottomDown = false,
-    this.spaceDown = false,
+    this.spaceDown  = false,
 
+    // FUNCTION MAIN :
     this.init = function()
     {
         this.initKeys();
         setInterval(this.mainLoop, this.ms);
     },
 
+    // CONTROL AU CLAVIER
     this.initKeys = function()
     {
         $(document).keydown(function(e) {
@@ -84,6 +86,7 @@ function Game(container, ms)
         game.keyManager();
     },
 
+    // CONTROL AU CLAVIER
     this.keyManager = function()
     {
         if (game.rightDown)
@@ -97,13 +100,25 @@ function Game(container, ms)
     };
 }
 
-var game = new Game("canvas", 24),
-    player = new Player(19, 19, 1, 1, "#3498DB"),
-    redGhost = new Ghost(19, 19, 9, 10, "#FF0000"),
-    blueGhost = new Ghost(19, 19, 9, 10, "#0000FF"),
-    yellowGhost = new Ghost(19, 19, 9, 10, "#FFFF00"),
-    pinkGhost = new Ghost(19, 19, 9, 10, "#FF00FF"),
-    food = new Food(2),
-    firstLevel = new Map(firstMap, 19);
+
+
+var game        = new Game("canvas", 24);
+var player      = new Player(19, 19, 1, 1, "#3498DB");
+
+var redGhost    = new Ghost(19, 19, 9, 10, "#FF0000");
+var blueGhost   = new Ghost(19, 19, 9, 10, "#0000FF");
+var yellowGhost = new Ghost(19, 19, 9, 10, "#FFFF00");
+var pinkGhost   = new Ghost(19, 19, 9, 10, "#FF00FF");
+
+var food        = new Food(2);
+var firstLevel  = new Map(firstMap, 19);
 
 game.init();
+
+
+
+console.log(food);
+console.log('%c    message   ', 'font-size: 2em; background-color: blue; color: yellow;');
+
+
+

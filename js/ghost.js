@@ -30,10 +30,10 @@ function Ghost(width, height, posX, posY, color)
 
     this.move = function(direction)
     {
-        this.onTheRight = firstMap[Math.floor((this.posY + (this.scale / 2)) / this.scale)][Math.floor((this.posX + this.scale) / this.scale)],
-        this.onTheLeft = firstMap[Math.floor((this.posY + (this.scale / 2)) / this.scale)][Math.floor((this.posX - 1) / this.scale)],
-        this.onTheTop = firstMap[Math.floor((this.posY - 1) / this.scale)][Math.floor((this.posX + (this.scale / 2)) / this.scale)],
-        this.onTheBottom = firstMap[Math.floor((this.posY + this.scale) / this.scale)][Math.floor((this.posX + (this.scale / 2)) / this.scale)];
+        this.onTheRight     = firstMap[Math.floor((this.posY + (this.scale / 2)) / this.scale)][Math.floor((this.posX + this.scale) / this.scale)],
+        this.onTheLeft      = firstMap[Math.floor((this.posY + (this.scale / 2)) / this.scale)][Math.floor((this.posX - 1) / this.scale)],
+        this.onTheTop       = firstMap[Math.floor((this.posY - 1) / this.scale)][Math.floor((this.posX + (this.scale / 2)) / this.scale)],
+        this.onTheBottom    = firstMap[Math.floor((this.posY + this.scale) / this.scale)][Math.floor((this.posX + (this.scale / 2)) / this.scale)];
 
         if (Math.floor(this.posX / this.scale) > Math.floor(game.width / this.scale))
             this.posX = 0;
